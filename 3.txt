@@ -1,0 +1,18 @@
+create or replace procedure test1 is
+     cursor c is select  * from employee where dept_id in (1,2) order by dept_id; 
+   r_code employee%rowtype;
+    begin
+      open c;
+     loop
+           fetch  c 
+            into r_code;
+	exit when c%notfound;
+     dbms_output.put_line(r_code.emp_id||´  ´||r_code.first_name||´  ´||r_code.dept_id);
+    end loop;
+       close c;
+  exception
+    when no_data_found then
+    dbms_output.put_line(´data not found´);
+    end;
+    /
+
