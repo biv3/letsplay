@@ -1,0 +1,3 @@
+select * from Acc_transaction where to_char(Txn_Date,´yyyy´)=2002;
+
+select d.Name from Department d , Employee e where d.Dept_id = e.Dept_id;
