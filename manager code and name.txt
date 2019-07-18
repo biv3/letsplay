@@ -1,0 +1,2 @@
+SELECT DISTINCT s.mgr_code, m.staff_name FROM staff_masters s, staff_masters m WHERE
+s.mgr_code = m.staff_code;
