@@ -1,0 +1,3 @@
+select staff_name as manager_name,total_strength from (select count(staff_code) as total_strength,mgr_code from staff_masters group by mgr_code) a,(select staff_name,staff_code from staff_masters) b where a.mgr_code=b.staff_code;
+
+
