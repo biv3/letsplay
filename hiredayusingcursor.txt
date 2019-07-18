@@ -1,0 +1,15 @@
+create or replace procedure proc_name( hire_date1 in date) is
+     cursor c is select to_char(hiredate,'day')  from staff_masters where hiredate=hire_date1;
+   week_day varchar2(15);
+    begin
+      open c;
+     loop
+           fetch  c
+            into week_day;
+	exit when c%notfound;
+    end loop;
+       dbms_output.put_line(week_day);
+       close c;
+    end;
+    /
+
